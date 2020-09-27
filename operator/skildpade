@@ -1,0 +1,10 @@
+import turtle
+
+t = turtle
+
+def skildpade(loop, vinkel):
+    for i in range(loop):
+        t.forward(i)
+        t.left(vinkel)
+
+skildpade(340, 77)
