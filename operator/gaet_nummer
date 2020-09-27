@@ -1,0 +1,97 @@
+# Operatorer
+
+3 == 3 #<- Det samme som
+3 != 3 #<- ikke det samme som
+3 < 3 #<- mindre end
+3 > 3 #<- større end
+3 >= 3 #<- større end eller det samme som
+3 <= 3 #<- mindre end eller det samme som
+
+
+# Gaaet tallet
+
+# Uden kommentarer
+
+import random
+rand_tal = random.randint(1, 101)
+
+gaet = 8
+
+for i in range(gaet):
+    gaet = gaet - 1
+    if gaet == 0:
+        break
+        
+    gaet_num = int(input("Gæt tallet: "))
+
+    if gaet_num != rand_tal:
+        print("Forkert...")
+        
+        if gaet_num > rand_tal:
+            print("dit gæt var for højt")
+            print("du har " + str(gaet - 1) + "forsøg tilbage\n")
+            
+        elif gaet_num < rand_tal:
+            print("dit gæt var for lavt!\n")
+            print("Du har " + str(gaet - 1) + "forsøg tilbage.\n")
+
+    elif gaet_num == rand_tal:
+        print("Korrekt!")
+        break
+
+print("Spillet er slut")
+
+
+
+
+# Med kommentarer
+
+# import af random modul
+import random
+# Vi tildeler variablen rand_tal et tilfældigt tal ml 1 og 100
+rand_tal = random.randint(1, 101)
+
+# variablen gaet siger til Python hvor mange gæt vi har
+gaet = 8
+
+# Spillet starter med et for loop. range indeholder variablen gæt som er på 8
+for i in range(gaet):
+    # man mister et forsøg for hvert gæt
+    gaet = gaet - 1
+    # hvis gaet er det samme som 0, har vi opbrugt vores forsøg
+    if gaet == 0:
+        # break hopper ud af loop/spillet
+        break
+
+    # gaet_num lader os indtaste et tal
+    # int(input()) oversætter en streng til et tal
+    gaet_num = int(input("Gæt tallet: "))
+
+    # kodeblok 1
+    # hvis gaet_num ikke er det samme som rand_tal
+    if gaet_num != rand_tal:
+        print("Forkert...")
+
+        # inde i kodeblok 1 laver vi en ny kodeblok, hvis vi har gættet forkert, fordi nummeret var for højt
+        if gaet_num > rand_tal:
+            print("dit gæt var for højt")
+            
+            # nedenstående print-funktion trækker 1 forsøg fra gaet og fortæller os hvor mange antal forsøg vi nu har tilbage
+            # \n betyder newline/ny linje efter strengen.
+            print("du har " + str(gaet - 1) + "forsøg tilbage\n")
+            
+        # inde i kodeblok 1 har vi endnu en kodeblok. Denne bruger Python, hvis gaet_num er lavere end rand_tal
+        elif gaet_num < rand_tal:
+            print("dit gæt var for lavt!\n")
+            print("Du har " + str(gaet - 1) + "forsøg tilbage.\n")
+
+    # kodeblok 2
+    # Hvis vi gætter rigtigt
+    elif gaet_num == rand_tal:
+        print("Korrekt!")
+        # loopet afsluttes med break
+        break
+
+print("Spillet er slut")
+
+
